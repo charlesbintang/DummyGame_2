@@ -7,7 +7,8 @@ public class WaveSpawner : MonoBehaviour
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
 
-    private Vector3 spawnPos = new Vector3(-13.9160004f,-0.58871603f,-39.9399986f);
+    // [SerializeField] private Vector3 spawnPos;
+    [SerializeField] private Transform spawnPosition;
     private float yRotation = 90f;
 
     [System.Serializable]
@@ -107,6 +108,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
+        Vector3 spawnPos = spawnPosition.position;
         Instantiate(_enemy, spawnPos, Quaternion.Euler(transform.rotation.eulerAngles.x, yRotation, transform.rotation.eulerAngles.z));
         Debug.Log("Spawning Enemy: " + _enemy.name);
     }

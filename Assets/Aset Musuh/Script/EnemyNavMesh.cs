@@ -6,15 +6,16 @@ using UnityEngine.AI;
 public class EnemyNavMesh : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
-    
+
     private NavMeshAgent navMeshAgent;
 
-    private void Awake() {
+    private void Awake()
+    {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        navMeshAgent.destination = movePositionTransform.position;    
+        navMeshAgent.destination = movePositionTransform.position;
     }
 }
