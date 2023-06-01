@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class attack : StateMachineBehaviour
+public class Attack : StateMachineBehaviour
 {
     Transform target;
-    float targetRange = 2f;
+    float targetRange = 1.9f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

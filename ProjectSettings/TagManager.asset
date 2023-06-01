@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyAsset
   - Enemy
   - Target
+  - Director
+  - EnemyAsset
   layers:
   - Default
   - TransparentFX

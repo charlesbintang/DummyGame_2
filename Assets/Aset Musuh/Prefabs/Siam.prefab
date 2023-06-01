@@ -1359,6 +1359,7 @@ GameObject:
   - component: {fileID: 1118661279340907004}
   - component: {fileID: 308455797}
   - component: {fileID: 308455798}
+  - component: {fileID: -7895682297399898208}
   m_Layer: 0
   m_Name: Siam
   m_TagString: Enemy
@@ -1450,8 +1451,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.472661, y: 5.487985, z: 1.7748156}
-  m_Center: {x: -0.023752846, y: 2.6365235, z: 0.38740793}
+  m_Size: {x: 2.03, y: 4.84, z: 1.7748156}
+  m_Center: {x: -0.023752846, y: 2.7, z: 0.38740793}
 --- !u!143 &1118661279340907004
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1463,13 +1464,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 5.46
-  m_Radius: 0.69
+  m_Height: 4.36
+  m_Radius: 1.07
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 2.61, z: 0.41}
+  m_Center: {x: 0, y: 3.03, z: 0.53}
 --- !u!114 &308455797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be33feb609c9e742b30d939b9a26508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePositionTransform: {fileID: 3919859530308215355, guid: 7f80ade1ba3062b4197fbbab62251efc, type: 3}
 --- !u!195 &308455798
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1505,6 +1505,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-7895682297399898208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769246812354812884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318a8fdc08bf11240a05abbc31dad854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6040472954286340239
 GameObject:
   m_ObjectHideFlags: 0

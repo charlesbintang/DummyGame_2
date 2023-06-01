@@ -5,12 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyNavMesh : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
-
+    // [SerializeField] private Transform movePositionTransform;
+    Transform movePositionTransform;
     private NavMeshAgent navMeshAgent;
 
     private void Awake()
     {
+        movePositionTransform = GameObject.Find("Director").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
