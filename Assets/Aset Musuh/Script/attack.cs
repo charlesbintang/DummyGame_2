@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attack : StateMachineBehaviour
 {
     Transform target;
-    float targetRange = 1.9f;
+    // float targetRange = 2.2f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -16,10 +16,15 @@ public class Attack : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float distance = Vector3.Distance(target.position, animator.transform.position);
-        if (distance < targetRange)
-        {
-            animator.SetBool("IsAttacking", true);
-        }
+        // if (distance > targetRange)
+        // {
+        //     animator.SetBool("IsAttacking", false);
+        // }
+
+        // if (distance < targetRange)
+        // {
+        //     animator.SetBool("IsAttacking", true);
+        // }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
