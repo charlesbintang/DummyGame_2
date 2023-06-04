@@ -11,7 +11,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void Awake()
     {
-        movePositionTransform = GameObject.Find("Target").transform;
+        movePositionTransform = GameObject.Find("Director").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
