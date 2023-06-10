@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // DisplayWristUI();
+       // DisplayWristUI();
     }
 
     public void PauseButtonPressed(InputAction.CallbackContext context)

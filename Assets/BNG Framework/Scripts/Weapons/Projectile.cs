@@ -13,6 +13,7 @@ namespace BNG {
         public GameObject HitFXPrefab;
         private bool _checkRaycast;
         public float Damage = 25;
+        Collider CapsuleCollider; 
 
         /// <summary>
         /// Add force to rigidbody on impact
@@ -31,6 +32,9 @@ namespace BNG {
         [Tooltip("Unity Event called when the projectile damages something")]
         public UnityEvent onDealtDamageEvent;
 
+        void Awake(){
+            CapsuleCollider = GetComponent<CapsuleCollider>();
+        }
         private void OnCollisionEnter(Collision collision) {
             OnCollisionEvent(collision);
         }
@@ -70,6 +74,7 @@ namespace BNG {
 
             if (StickToObject) {
                 // tryStickToObject
+                CapsuleCollider.enabled = false;
             }
             else {
                 // Done with this projectile

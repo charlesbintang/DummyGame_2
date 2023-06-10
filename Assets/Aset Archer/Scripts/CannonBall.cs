@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
+    public float EndPosY;
+    public float Damage;
+    public float Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +16,9 @@ public class CannonBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 0.8f)
+        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+
+        if (transform.position.y < EndPosY)
         {
             Destroy(gameObject);
         }
@@ -23,7 +28,7 @@ public class CannonBall : MonoBehaviour
     {
         if (enemy.gameObject.CompareTag("Enemy"))
         {
-            enemy.GetComponent<HealthController>().ApplyDamage(40);
+            enemy.GetComponent<HealthController>().ApplyDamage(Damage);
             Destroy(gameObject);
         }
     }

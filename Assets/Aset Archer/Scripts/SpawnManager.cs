@@ -6,7 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
 
     public GameObject[] cannonBallPrefabs;
-    public float spawnRangeX = 10;
+    public float spawnPosX = 10;
+    public float spawnPosY = 11;
     public float spawnPosZ = 11;
     public float startDelay = 2;
     public float spawnInterval = 5;
@@ -28,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     void SpawnCannonBall()
     {
         // Randomly generate animal index and spawn position
-        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 2.43f, spawnPosZ);
+        Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
         int enemyIndex = Random.Range(0, cannonBallPrefabs.Length);
         Instantiate(cannonBallPrefabs[enemyIndex], spawnPos,

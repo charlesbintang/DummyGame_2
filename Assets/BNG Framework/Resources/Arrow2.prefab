@@ -1874,7 +1874,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788403267267814777}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.01
   m_Height: 0.78402925
@@ -1914,7 +1914,7 @@ MonoBehaviour:
   ValidLayers:
     serializedVersion: 2
     m_Bits: 1281
-  StickToObject: 1
+  StickToObject: 0
   MinForceHit: 0.02
   onDealtDamageEvent:
     m_PersistentCalls:

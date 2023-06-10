@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GateHealthController : MonoBehaviour
 {
     [SerializeField]
@@ -50,11 +50,13 @@ public class GateHealthController : MonoBehaviour
             {
                 enemyAsset[i].SetActive(false);
             }
-            // healthPanel.SetActive(false);
-            Destroy(gameObject);
+            healthPanel.SetActive(false);
+            // Destroy(gameObject);
             // StartCoroutine(RespawnAfterTime());
             // score.AddScore(1);
-            // GameObject.FindGameObjectWithTag("Player").GetComponent<Scoring>().AddScore(1);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Scoring>().YouLose();
+            StartCoroutine(VideoScene());
+            // SceneManager.LoadScene("Menu Start");
         }
 
         UpdateHealthUI();
@@ -64,6 +66,12 @@ public class GateHealthController : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnTime);
         ResetHealth();
+    }
+
+    IEnumerator VideoScene()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        SceneManager.LoadScene("Menu Start");
     }
 
     private void ResetHealth()

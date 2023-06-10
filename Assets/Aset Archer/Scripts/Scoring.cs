@@ -8,7 +8,12 @@ public class Scoring : MonoBehaviour
     public Text ScoreText;
     public int score = 0;
     public int maxScore;
+    public int SkorCetbang1;
+    public int SkorCetbang2;
     public GameObject Victory;
+    public GameObject GameOver;
+    public GameObject Cetbang1;
+    public GameObject Cetbang2;
 
 
 
@@ -28,6 +33,22 @@ public class Scoring : MonoBehaviour
         ScoreText.text = "Score: " + score;
     }
 
+    public void YouLose()
+    {
+        GameOver.SetActive(true);
+    }
+
+    public void Cetbang1_Actived()
+    {
+        Cetbang1.GetComponent<SpawnManager>().enabled = true;
+    }
+
+    public void Cetbang2_Actived()
+    {
+        Cetbang2.GetComponent<SpawnManager>().enabled = true;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +57,14 @@ public class Scoring : MonoBehaviour
         if (score == maxScore)
         {
             Victory.SetActive(true);
+        }
+        if (score == SkorCetbang1)
+        {
+            Cetbang1_Actived();
+        }
+        if (score == SkorCetbang2)
+        {
+            Cetbang2_Actived();
         }
     }
 }
