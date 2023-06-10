@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonBall : MonoBehaviour
+public class CannonBall2 : MonoBehaviour
 {
     public float EndPosY;
     public float Damage;
@@ -16,7 +16,7 @@ public class CannonBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+        transform.Translate(Vector3.back * Time.deltaTime * Speed);
 
         if (transform.position.y < EndPosY)
         {
