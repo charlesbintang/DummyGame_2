@@ -42,7 +42,7 @@ public class Sword : MonoBehaviour
         {
             if (iteration < 3)
             {
-                enemy.GetComponent<HealthController>().ApplyDamage(10);
+                enemy.GetComponent<HealthController>().ApplyDamage(100);
                 iteration += 1;
                 // hasHit = true;
             }
