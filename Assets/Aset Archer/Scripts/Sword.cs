@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Punch : MonoBehaviour
+public class Sword : MonoBehaviour
 {
     public GameObject player;
     public float xPosition;
     public float yPosition;
     public float zPosition;
+    public Button buttonTrigger;
+    private bool canAttack = true;
     int iteration = 0;
-    public bool hasHit = false;
+    // public bool hasHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,27 +24,38 @@ public class Punch : MonoBehaviour
     {
         if (iteration == 3)
         {
-            player.transform.position = new Vector3(0f, 0.0799998f, 0f);
-            Debug.Log("Teleport!");
+            // player.transform.position = new Vector3(xPosition, yPosition, zPosition);
             iteration = 0;
+            GoUpToTower();
+            Debug.Log("Teleport!");
             // player.transform.localEulerAngles = Vector3.zero;
         }
-        if (Input.GetButtonUp("Fire2"))
-        {
-            hasHit = false;
-        }
+        // if (Input.GetButtonUp("Fire2"))
+        // {
+        //     hasHit = false;
+        // }
     }
 
     private void OnTriggerEnter(Collider enemy)
     {
         if (enemy.gameObject.CompareTag("Enemy"))
         {
-            if (Input.GetButton("Fire2") && iteration < 3 && hasHit == false)
+            if (iteration < 3)
             {
                 enemy.GetComponent<HealthController>().ApplyDamage(10);
                 iteration += 1;
-                hasHit = true;
+                // hasHit = true;
             }
+        }
+    }
+
+    private void GoUpToTower()
+    {
+        if (canAttack)
+        {
+            buttonTrigger.onClick.Invoke();
+            Debug.Log("Teleported!!");
+            // canAttack = false;
         }
     }
 }
