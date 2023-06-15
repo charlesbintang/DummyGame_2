@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Aset Map/Scenes/Menu Start.unity
-    guid: b1b7b84d1d147cc4c91beec1ed848986
+    path: Assets/Aset Map/Scenes/FirstMainMenu.unity
+    guid: b348cd473187dbb4da772172165c25bc
   - enabled: 1
-    path: Assets/Aset Map/Scenes/AllNew.unity
+    path: Assets/Aset Map/Scenes/JustMainMenu.unity
+    guid: 14f477a997f6f9d45a7fa0e9bfa570a8
+  - enabled: 1
+    path: Assets/Aset Map/Scenes/AllNew_Stage1.unity
     guid: 45f2e1e362c0a9743ad119496ee1e053
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0c6c124614534324789a01373fca52fd, type: 2}

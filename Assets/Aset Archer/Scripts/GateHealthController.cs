@@ -71,7 +71,7 @@ public class GateHealthController : MonoBehaviour
     IEnumerator VideoScene()
     {
         yield return new WaitForSeconds(respawnTime);
-        SceneManager.LoadScene("Menu Start");
+        SceneManager.LoadScene("JustMainMenu");
     }
 
     private void ResetHealth()

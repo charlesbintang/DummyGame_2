@@ -30,7 +30,7 @@ public class Scoring : MonoBehaviour
 
     public void UpdateScore()
     {
-        ScoreText.text = "Score: " + score;
+        ScoreText.text = "             " + score;
     }
 
     public void YouLose()

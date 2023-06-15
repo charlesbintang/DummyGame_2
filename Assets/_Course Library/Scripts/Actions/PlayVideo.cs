@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 /// <summary>
 /// Play a single video or play from a list of videos 
@@ -19,6 +21,8 @@ public class PlayVideo : MonoBehaviour
 
     private VideoPlayer videoPlayer = null;
     private MeshRenderer meshRenderer = null;
+    private GameObject canvasSkipBtn;
+    public GameObject canvasMainMenu;
 
     private int index = 0;
 
@@ -26,6 +30,7 @@ public class PlayVideo : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
         videoPlayer = GetComponent<VideoPlayer>();
+        canvasSkipBtn = GameObject.Find("CanvasSkipButton");
 
         if (videoClips.Count > 0)
             videoPlayer.clip = videoClips[0];
@@ -45,12 +50,20 @@ public class PlayVideo : MonoBehaviour
     {
         if (playAtStart)
         {
-            Play();
+            StartCoroutine("PlayTheVideoAfterXSecond");
         }
         else
         {
             Stop();
         }
+    }
+
+    IEnumerator PlayTheVideoAfterXSecond()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Play();
+        yield return new WaitForSeconds(55f);
+        Stop();
     }
 
     public void NextClip()
@@ -91,8 +104,17 @@ public class PlayVideo : MonoBehaviour
 
     public void Stop()
     {
-        videoMaterial.color = Color.black;
+        StartCoroutine("StopTheVideo");
+    }
+    IEnumerator StopTheVideo()
+    {
+        GameObject.Find("PanelVideo").GetComponent<RawImage>().enabled = false;
         videoPlayer.Stop();
+        yield return new WaitForSeconds(0.001f);
+        canvasMainMenu.SetActive(true);
+        // yield return new WaitForSeconds(0.5f);
+        canvasSkipBtn.SetActive(false);
+        yield return new WaitForSeconds(0.001f);
     }
 
     public void TogglePlayStop()

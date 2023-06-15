@@ -13,18 +13,18 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // DisplayWristUI();
+        // DisplayWristUI();
     }
 
     public void PauseButtonPressed(InputAction.CallbackContext context)
     {
-        if(context.performed)
-        DisplayWristUI();
+        if (context.performed)
+            DisplayWristUI();
     }
 
     public void DisplayWristUI()
     {
-        if(activeWristUI)
+        if (activeWristUI)
         {
             wristUI.SetActive(false);
             activeWristUI = false;
@@ -45,6 +45,6 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        SceneManager.LoadScene("Menu Start");
+        SceneManager.LoadScene("JustMainMenu");
     }
 }
