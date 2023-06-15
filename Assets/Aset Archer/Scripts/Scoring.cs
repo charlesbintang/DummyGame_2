@@ -10,10 +10,12 @@ public class Scoring : MonoBehaviour
     public int maxScore;
     public int SkorCetbang1;
     public int SkorCetbang2;
+    public int SkorSword;
     public GameObject Victory;
     public GameObject GameOver;
     public GameObject Cetbang1;
     public GameObject Cetbang2;
+    public GameObject Sword;
 
 
 
@@ -48,6 +50,11 @@ public class Scoring : MonoBehaviour
         Cetbang2.GetComponent<SpawnManager>().enabled = true;
 
     }
+    public void Sword_Actived()
+    {
+        Sword.SetActive(true);
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -65,6 +72,10 @@ public class Scoring : MonoBehaviour
         if (score == SkorCetbang2)
         {
             Cetbang2_Actived();
+        }
+        if (score == SkorSword)
+        {
+            Sword_Actived();
         }
     }
 }
