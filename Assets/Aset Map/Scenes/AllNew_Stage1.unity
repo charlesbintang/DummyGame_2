@@ -1286,7 +1286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 15
+  m_Text: 
 --- !u!222 &219685361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2708,7 +2708,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 64
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5915,7 +5915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 1216039982}
   score: 0
-  maxScore: 24
+  maxScore: 20
   SkorCetbang1: 4
   SkorCetbang2: 8
   SkorSword: 14
@@ -5925,7 +5925,7 @@ MonoBehaviour:
   Cetbang2: {fileID: 919132149444676789}
   Sword: {fileID: 1300589514}
   AnnouncementText: {fileID: 437796976}
-  LoadAScene: 
+  LoadAScene: Victory1
 --- !u!114 &920979000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12766,7 +12766,7 @@ PrefabInstance:
       objectReference: {fileID: 6583044139393663342, guid: b7821bc68399b8d408e2ca218c29c3de, type: 3}
     - target: {fileID: 1335602972440290273, guid: dfabf8a5a2eab3043995207a79caa036, type: 3}
       propertyPath: waves.Array.data[3].count
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1335602972440290273, guid: dfabf8a5a2eab3043995207a79caa036, type: 3}
       propertyPath: waves.Array.data[3].enemy
@@ -13057,7 +13057,7 @@ PrefabInstance:
       objectReference: {fileID: 6583044139393663342, guid: b7821bc68399b8d408e2ca218c29c3de, type: 3}
     - target: {fileID: 1335602972440290273, guid: dfabf8a5a2eab3043995207a79caa036, type: 3}
       propertyPath: waves.Array.data[3].count
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1335602972440290273, guid: dfabf8a5a2eab3043995207a79caa036, type: 3}
       propertyPath: waves.Array.data[3].enemy

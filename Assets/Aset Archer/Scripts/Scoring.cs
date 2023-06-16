@@ -17,6 +17,7 @@ public class Scoring : MonoBehaviour
     public GameObject Cetbang2;
     public GameObject Sword;
     public Text AnnouncementText;
+    private bool notLoop = true;
     public string LoadAScene;
 
 
@@ -50,19 +51,61 @@ public class Scoring : MonoBehaviour
 
     public void Cetbang1_Actived()
     {
-        Cetbang1.GetComponent<SpawnManager>().enabled = true;
-        AnnouncementText.text = "East Cetbang is Activated";
+        if (notLoop)
+        {
+            StartCoroutine("ForCetbang1");
+            notLoop = false;
+        }
+        else
+        {
+            return;
+        }
     }
-
     public void Cetbang2_Actived()
     {
-        Cetbang2.GetComponent<SpawnManager>().enabled = true;
-
+        if (notLoop)
+        {
+            StartCoroutine("ForCetbang2");
+            notLoop = false;
+        }
+        else
+        {
+            return;
+        }
     }
     public void Sword_Actived()
     {
-        Sword.SetActive(true);
+        if (notLoop)
+        {
+            StartCoroutine("ForSword");
+            notLoop = false;
+        }
+        else
+        {
+            return;
+        }
+    }
 
+    IEnumerator ForCetbang1()
+    {
+        Cetbang1.GetComponent<SpawnManager>().enabled = true;
+        AnnouncementText.text = "East Cetbang is Activated";
+        yield return new WaitForSeconds(2f);
+        AnnouncementText.text = " ";
+    }
+    IEnumerator ForCetbang2()
+    {
+        Cetbang2.GetComponent<SpawnManager>().enabled = true;
+        AnnouncementText.text = "West Cetbang is Activated";
+        yield return new WaitForSeconds(2f);
+        AnnouncementText.text = " ";
+    }
+    IEnumerator ForSword()
+    {
+        Sword.SetActive(true);
+        AnnouncementText.text = "Ability Sword is unlocked";
+        yield return new WaitForSeconds(2f);
+        AnnouncementText.text = " ";
     }
 
     // Update is called once per frame
@@ -78,9 +121,17 @@ public class Scoring : MonoBehaviour
         {
             Cetbang1_Actived();
         }
+        if (score == SkorCetbang1 + 1)
+        {
+            notLoop = true;
+        }
         if (score == SkorCetbang2)
         {
             Cetbang2_Actived();
+        }
+        if (score == SkorCetbang2 + 1)
+        {
+            notLoop = true;
         }
         if (score == SkorSword)
         {
