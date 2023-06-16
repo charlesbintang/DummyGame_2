@@ -20,6 +20,7 @@ public class FirstWave : MonoBehaviour
         if (currentTime > 0)
         {
             currentTime -= Time.deltaTime;
+            countdownText.color = Color.red;
             countdownText.text = currentTime.ToString("0");
         }
         else
@@ -31,7 +32,6 @@ public class FirstWave : MonoBehaviour
 
     IEnumerator TurnOffThisScript()
     {
-        countdownText.color = Color.red;
         countdownText.text = "Incoming Enemy!";
         yield return new WaitForSeconds(0.001f);
         WaveSpawner1.SetActive(true);

@@ -23,6 +23,8 @@ public class PlayVideo : MonoBehaviour
     private MeshRenderer meshRenderer = null;
     private GameObject canvasSkipBtn;
     public GameObject canvasMainMenu;
+    public float VideoDuration = 55f;
+    public string LoadAScene;
 
     private int index = 0;
 
@@ -62,7 +64,7 @@ public class PlayVideo : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         Play();
-        yield return new WaitForSeconds(55f);
+        yield return new WaitForSeconds(VideoDuration);
         Stop();
     }
 
@@ -115,6 +117,7 @@ public class PlayVideo : MonoBehaviour
         // yield return new WaitForSeconds(0.5f);
         canvasSkipBtn.SetActive(false);
         yield return new WaitForSeconds(0.001f);
+        canvasMainMenu.GetComponent<ManagerScene>().LoadToScene(LoadAScene);
     }
 
     public void TogglePlayStop()

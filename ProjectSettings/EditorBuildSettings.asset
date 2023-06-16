@@ -13,7 +13,16 @@ EditorBuildSettings:
     guid: 14f477a997f6f9d45a7fa0e9bfa570a8
   - enabled: 1
     path: Assets/Aset Map/Scenes/AllNew_Stage1.unity
-    guid: 45f2e1e362c0a9743ad119496ee1e053
+    guid: 88bc8a5fd1da9af47b98c1cf10cf64d0
+  - enabled: 1
+    path: Assets/Aset Map/Scenes/Victory1.unity
+    guid: a406523c285b4274fbaca2a393cbd5be
+  - enabled: 1
+    path: Assets/Aset Map/Scenes/AllNew_Stage2.unity
+    guid: db4c6beca2aeacb46a15228dd104ad67
+  - enabled: 1
+    path: Assets/Aset Map/Scenes/Victory2.unity
+    guid: bbca3e42f551e944b837a1d796930b0c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0c6c124614534324789a01373fca52fd, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f82548e14c927644cbe5a9e056101551, type: 2}

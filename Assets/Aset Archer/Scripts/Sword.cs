@@ -10,6 +10,7 @@ public class Sword : MonoBehaviour
     public float yPosition;
     public float zPosition;
     public Button buttonTrigger;
+    public GameObject SwordButton;
     private bool canAttack = true;
     int iteration = 0;
     // public bool hasHit = false;
@@ -57,5 +58,17 @@ public class Sword : MonoBehaviour
             Debug.Log("Teleported!!");
             // canAttack = false;
         }
+    }
+
+    public void ButtonInactive()
+    {
+        StartCoroutine("InactiveButton");
+    }
+
+    IEnumerator InactiveButton()
+    {
+        SwordButton.SetActive(false);
+        yield return new WaitForSeconds(30f);
+        SwordButton.SetActive(true);
     }
 }

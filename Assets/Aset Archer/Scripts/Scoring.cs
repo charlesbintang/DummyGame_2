@@ -16,6 +16,8 @@ public class Scoring : MonoBehaviour
     public GameObject Cetbang1;
     public GameObject Cetbang2;
     public GameObject Sword;
+    public Text AnnouncementText;
+    public string LoadAScene;
 
 
 
@@ -40,9 +42,16 @@ public class Scoring : MonoBehaviour
         GameOver.SetActive(true);
     }
 
+    public void YouWin()
+    {
+        Victory.SetActive(true);
+        gameObject.GetComponent<ManagerScene>().LoadToScene(LoadAScene);
+    }
+
     public void Cetbang1_Actived()
     {
         Cetbang1.GetComponent<SpawnManager>().enabled = true;
+        AnnouncementText.text = "East Cetbang is Activated";
     }
 
     public void Cetbang2_Actived()
@@ -63,7 +72,7 @@ public class Scoring : MonoBehaviour
 
         if (score == maxScore)
         {
-            Victory.SetActive(true);
+            YouWin();
         }
         if (score == SkorCetbang1)
         {
