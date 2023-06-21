@@ -21,9 +21,9 @@ namespace BNG {
             InputAction.action.performed -= ToggleActive;
         }
 
-        void Start(){
-            ToggleObject.SetActive(false);
-        }
+        // void Start(){
+        //     ToggleObject.SetActive(true);
+        // }
 
         public void ToggleActive(InputAction.CallbackContext context) {
             if(ToggleObject) {

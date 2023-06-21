@@ -9,6 +9,9 @@ public class WaveSpawner : MonoBehaviour
 
     // [SerializeField] private Vector3 spawnPos;
     [SerializeField] private Transform spawnPosition;
+    [SerializeField] private GameObject Wave2;
+    [SerializeField] private GameObject Wave3;
+    [SerializeField] private GameObject Wave4;
     private float yRotation = 90f;
 
     [System.Serializable]
@@ -74,6 +77,29 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("Completed All Waves! Looping...");
         }
         nextWave++;
+        StartCoroutine("waveCheck");
+    }
+
+    IEnumerator waveCheck()
+    {
+        if (nextWave == 1)
+        {
+            Wave2.SetActive(true);
+            yield return new WaitForSeconds(5f);
+            Wave2.SetActive(false);
+        }
+        if (nextWave == 2)
+        {
+            Wave3.SetActive(true);
+            yield return new WaitForSeconds(5f);
+            Wave3.SetActive(false);
+        }
+        if (nextWave == 3)
+        {
+            Wave4.SetActive(true);
+            yield return new WaitForSeconds(5f);
+            Wave4.SetActive(false);
+        }
     }
 
     bool EnemyIsAlive()

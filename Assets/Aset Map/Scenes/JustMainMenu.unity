@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13138041, g: 0.14009808, b: 0.12959467, a: 1}
+  m_IndirectSpecularColor: {r: 0.13138065, g: 0.14009833, b: 0.12959489, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -339,6 +339,26 @@ PrefabInstance:
     - target: {fileID: 4419010822777988110, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
       propertyPath: m_Name
       value: XR Rig Advanced
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081331099896262645, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081331099896262645, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
+      propertyPath: TeleportMarker
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081331099896262645, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
+      propertyPath: TeleportDestination
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081331099896262645, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
+      propertyPath: TeleportBeginTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081331099896262645, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
+      propertyPath: TeleportBeginTransformAlt
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8672018449878313389, guid: 20cc39cc4862d514996668f1dbde1bde, type: 3}
       propertyPath: m_Enabled

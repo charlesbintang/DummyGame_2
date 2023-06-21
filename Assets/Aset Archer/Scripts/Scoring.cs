@@ -45,7 +45,12 @@ public class Scoring : MonoBehaviour
 
     public void YouWin()
     {
+        StartCoroutine("GameVictory");
+    }
+
+    IEnumerator GameVictory(){
         Victory.SetActive(true);
+        yield return new WaitForSeconds(4f);
         gameObject.GetComponent<ManagerScene>().LoadToScene(LoadAScene);
     }
 
@@ -90,21 +95,21 @@ public class Scoring : MonoBehaviour
     {
         Cetbang1.GetComponent<SpawnManager>().enabled = true;
         AnnouncementText.text = "East Cetbang is Activated";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         AnnouncementText.text = " ";
     }
     IEnumerator ForCetbang2()
     {
         Cetbang2.GetComponent<SpawnManager>().enabled = true;
         AnnouncementText.text = "West Cetbang is Activated";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         AnnouncementText.text = " ";
     }
     IEnumerator ForSword()
     {
         Sword.SetActive(true);
-        AnnouncementText.text = "Ability Sword is unlocked";
-        yield return new WaitForSeconds(2f);
+        AnnouncementText.text = "You now have Sword ability";
+        yield return new WaitForSeconds(5f);
         AnnouncementText.text = " ";
     }
 

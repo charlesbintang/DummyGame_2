@@ -16,7 +16,7 @@ public class CannonBall1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * Speed);
+        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
 
         if (transform.position.y < EndPosY)
         {

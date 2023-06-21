@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
+    AudioSource audioSource;
+    Animator animator;
+
     [SerializeField]
     private GameObject healthPanel;
 
@@ -29,11 +32,13 @@ public class HealthController : MonoBehaviour
     private bool isDead;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         healthBarStartWidth = healthBar.sizeDelta.x;
         ResetHealth();
         UpdateHealthUI();
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     public void ApplyDamage(float damage)
@@ -50,12 +55,11 @@ public class HealthController : MonoBehaviour
             {
                 enemyAsset[i].SetActive(false);
             }
-            // healthPanel.SetActive(false);
-            Destroy(gameObject);
-            // StartCoroutine(RespawnAfterTime());
+            healthPanel.SetActive(false);
+            animator.enabled = false;
+            StartCoroutine(DiedSound());
             GameObject.FindGameObjectWithTag("Player").GetComponent<Scoring>().AddScore(1);
         }
-
         UpdateHealthUI();
     }
 
@@ -63,6 +67,13 @@ public class HealthController : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnTime);
         ResetHealth();
+    }
+    
+    IEnumerator DiedSound()
+    {
+        audioSource.enabled = true;
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     private void ResetHealth()

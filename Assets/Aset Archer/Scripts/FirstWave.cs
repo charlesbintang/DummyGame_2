@@ -8,11 +8,16 @@ public class FirstWave : MonoBehaviour
     public Text countdownText; // Referensi ke teks yang akan menampilkan countdown
     public GameObject WaveSpawner1;
     public GameObject WaveSpawner2;
+    public GameObject Wave1;
+    public GameObject EnemyComing;
     private float currentTime;
+    AudioSource audioSource;
+    private bool done = true;
 
-    private void Start()
+    private void Awake()
     {
         currentTime = countdownTime;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -26,18 +31,26 @@ public class FirstWave : MonoBehaviour
         else
         {
             // Countdown selesai, lakukan tindakan yang diinginkan
-            StartCoroutine("TurnOffThisScript");
+            if (done){
+                EnemyComing.SetActive(true);
+                StartCoroutine("TurnOffThisScript");
+            }
+            done = false;
         }
     }
 
     IEnumerator TurnOffThisScript()
     {
-        countdownText.text = "Incoming Enemy!";
+        countdownText.text = " ";
+        yield return new WaitForSeconds(0.001f);
+        audioSource.enabled = true;
         yield return new WaitForSeconds(0.001f);
         WaveSpawner1.SetActive(true);
         yield return new WaitForSeconds(0.001f);
         WaveSpawner2.SetActive(true);
         yield return new WaitForSeconds(5f);
+        EnemyComing.SetActive(false);
         countdownText.enabled = false;
+        Wave1.SetActive(false);
     }
 }
